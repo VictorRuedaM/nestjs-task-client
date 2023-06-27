@@ -6,7 +6,9 @@ const url = import.meta.env.VITE_URL_API;
 
 export const createTaskRequest = async (task: CreateTask) => {
 
-  await axios.post(`${url}`, task);
+  const res = await axios.post(`${url}`, task);
+
+  return res.data
 
 }
 

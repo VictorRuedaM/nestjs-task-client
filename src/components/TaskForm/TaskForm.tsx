@@ -1,6 +1,8 @@
 
 import { ChangeEvent, FormEvent, useState } from "react"
 import { createTaskRequest } from "../../api/taskApi";
+import { useTasks } from "../../context/useTasks";
+import { CreateTask } from '../../interfaces/task.interface';
 
 function TaskForm() {
 
@@ -9,6 +11,10 @@ function TaskForm() {
     description: '',
     done: false
   })
+
+  const {createTask} = useTasks();
+
+
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 
@@ -21,8 +27,9 @@ function TaskForm() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(task)
-    createTaskRequest(task);
+
+    createTask(task);
+
   }
   return (
     <div>
