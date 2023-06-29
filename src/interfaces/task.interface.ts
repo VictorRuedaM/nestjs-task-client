@@ -8,4 +8,6 @@ export interface Task {
 
 }
 
-export type CreateTask = Omit<Task, '_id' | 'createdAT' | 'updatedAT'>
+export type CreateTask = Omit<Task, '_id' | 'createdAT' | 'updatedAT'>;
+
+export type UpdateTask = Partial<CreateTask>;

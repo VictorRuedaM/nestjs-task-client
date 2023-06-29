@@ -30,6 +30,7 @@ function TaskForm() {
 
     createTask(task);
 
+
   }
   return (
     <div>
@@ -41,12 +42,12 @@ function TaskForm() {
         className="border-2 border-gray-700 p-2 rounded-lg
         bg-zinc-800 block w-full my-2" placeholder="Write a description" onChange={handleChange}></textarea>
 
-        <label htmlFor="" className="inline-flex items-center gap-x-2">
+        {/* <label htmlFor="" className="inline-flex items-center gap-x-2">
           <input type="checkbox" className="h-5 w-5 text-amber-700"
           onChange={(e) => setTask({...task, done: !task.done})}
           />
           <span>Done</span>
-        </label>
+        </label> */}
 
         <button className="bg-amber-700 px-3 py-2 block w-full rounded-lg">Save</button>
       </form>
